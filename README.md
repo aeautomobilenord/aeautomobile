@@ -1,74 +1,17 @@
-# A&E Automobile — Next.js Projekt (SEO / Google Maps überarbeitet)
+# Autoankauf Hamburg by A&E Automobile
 
-Dieses Projekt ist die überarbeitete Version der Website für **A&E Automobile**.
+Production website, 34 German pages. Registered business: A&E Automobile; proprietor: Eihab Hasan.
 
-## Enthaltene Verbesserungen
+Static files are in public/, mail functions in api/. Vercel preset Other, output public, no build command, Node 22, Frankfurt function region.
 
-- einheitliche Markenbezeichnung im gesamten Projekt
-- saubere Seiten-Metadaten für Next.js
-- `robots.ts`, `sitemap.ts` und `manifest.ts`
-- strukturierte Daten für `WebSite`, `AutoDealer`, `BreadcrumbList` und `FAQPage`
-- stärkere lokale Ausrichtung für **Google Suche** und **Google Maps**
-- überarbeitete Header-/Footer-Navigation mit `Über uns` und Google-Maps-Link
-- vertrauenswürdigerer Inhalt statt künstlich wirkender Bewertungs-Claims
-- verbesserte Seiten für Startseite, Standorte, Über uns, FAQ, Impressum und Datenschutz
-- `noindex` für die interne Zwischenseite `/bewertung/kontakt`
-- bereinigtes Projekt ohne `node_modules`, `.next` und unnötige macOS-Artefakte
+Private environment variables: RESEND_API_KEY and TURNSTILE_SECRET_KEY as Secrets. MAIL_FROM as sender configuration; SITE_ORIGIN must equal the exact public website origin. Configure separate Preview and Production values. Never put secrets in GitHub.
 
-## Was bewusst noch **nicht** umgesetzt ist
+Vehicle enquiry sending is enabled. The owner verified receipt of mail with photos on the staging deployment. Repeat a genuine request after the production domain changes. Google reviews currently use dated, locally stored excerpts; Google API approval and credentials are still pending.
 
-Der Anfrageabschluss ist aktuell weiterhin **nur visuell**.
-Die letzte Formularstufe speichert bzw. sendet noch **keine echten Daten** an:
+The location map is a locally stored image supplied by the owner. It appears immediately. Google Maps opens only when the visitor clicks the map or the directions link. No map consent storage or embedded Google iframe is used. Legal pages include the confirmed business identity and VAT ID; the ordinary tax number is not public.
 
-- E-Mail
-- Datenbank
-- API / Webhook
-- CRM
+Commercial use requires an appropriate Vercel plan. Keep the previous production project for rollback when moving the domain.
 
-Diese Funktion war auf Wunsch **die letzte Ausbaustufe** und ist in dieser Version noch offen.
+Unused old logos, the earlier schematic map and inactive Google reviews integration have been removed from this deployment. Current reviews are static dated excerpts. Vehicle-data attribution and license notices are retained.
 
-## Start lokal
-
-```bash
-npm install
-npm run dev
-```
-
-Dann im Browser öffnen:
-
-```bash
-http://localhost:3000
-```
-
-## Wichtige Umgebungsvariable
-
-Lege eine `.env.local` an oder nutze die vorhandene `.env.example`:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://www.deine-domain.de
-```
-
-Beispiel:
-
-```bash
-cp .env.example .env.local
-```
-
-## Projektstruktur
-
-- `app/page.tsx` → Startseite
-- `app/bewertung/page.tsx` → Fahrzeuganfrage
-- `app/bewertung/kontakt/*` → letzte Kontaktstufe (aktuell noch ohne echte Übertragung)
-- `app/standorte/page.tsx` → lokale SEO-Seite für Reinbek / Hamburg / Umgebung
-- `app/ueber-uns/page.tsx` → Unternehmensseite
-- `app/faq/page.tsx` → FAQ mit Schema-Markup
-- `lib/site-config.ts` → zentrale Unternehmensdaten
-- `lib/seo.ts` → SEO-Helfer, Canonicals und JSON-LD-Builder
-
-## Nächste logische Ausbaustufe
-
-1. echtes Formular-Backend anbinden
-2. Bilder sicher hochladen oder per E-Mail / Storage verarbeiten
-3. Leads speichern
-4. Admin-Übersicht ergänzen
-5. Search Console und Domain produktiv verbinden
+Customer gallery currently contains seven photographs (1.jpg through 7.jpg). If adding photographs, update the gallery count in public/js/main.js as well.

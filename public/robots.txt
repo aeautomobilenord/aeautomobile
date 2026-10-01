@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /seo-config.json
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /tools/
+Disallow: /seo-config.json
+
+Sitemap: https://www.aeautomobile.de/sitemap.xml

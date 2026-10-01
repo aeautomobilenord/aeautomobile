@@ -1,0 +1,45 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 40
+    }
+  },
+  "regions": [
+    "fra1"
+  ],
+  "redirects": [
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/datenschutz.html",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-uns",
+      "destination": "/ueber-uns.html",
+      "permanent": true
+    },
+    {
+      "source": "/standorte",
+      "destination": "/abholgebiet.html",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/#fragen",
+      "permanent": true
+    },
+    {
+      "source": "/bewertung",
+      "destination": "/bewertung.html",
+      "permanent": true
+    }
+  ]
+}
